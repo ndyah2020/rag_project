@@ -28,7 +28,7 @@ def create_rag_chain():
         embedding_function=embedding_function
     )
 
-    chunks = vector_store.as_retriever(search_kwargs={"k": 5})
+    chunks = vector_store.as_retriever(search_kwargs={"k": 10})
     
     prompt = ChatPromptTemplate.from_template(template)
     llm = Ollama(model="ontocord/vinallama")

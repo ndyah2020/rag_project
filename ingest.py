@@ -1,6 +1,5 @@
 from rag_pipeline import get_embedding_function, load_documents, split_documents
 from langchain_chroma import Chroma
-
 SOURCE_DIR = "source_documents"
 DB_DIR = "persistent_chroma_db"
 
@@ -14,6 +13,6 @@ def main():
         embedding=embeddings_function,
         persist_directory=DB_DIR
     )
-
+    print("create data complete")
 if __name__ == "__main__":
     main()

@@ -1,18 +1,16 @@
-from rag_pipeline import get_embedding_function, load_documents, split_documents
-from langchain_chroma import Chroma
-SOURCE_DIR = "source_documents"
-DB_DIR = "persistent_chroma_db"
+# ingest.py
+from rag_pipeline import load_documents, split_documents, store_embeddings
 
 def main():
-    documents = load_documents(SOURCE_DIR)
-    chunks = split_documents(documents)
-    embeddings_function = get_embedding_function()
+    print("Bắt đầu xử lý tài liệu PDF...")
+    docs = load_documents("source_documents")
+    print(f"Đã tải {len(docs)} trang PDF.")
+    
+    split_docs = split_documents(docs)
+    print(f"Đã chia thành {len(split_docs)} đoạn văn bản (chunks).")
+    
+    store_embeddings(split_docs)
+    print("Quá trình nhập liệu hoàn tất!")
 
-    Chroma.from_documents(
-        documents=chunks,
-        embedding=embeddings_function,
-        persist_directory=DB_DIR
-    )
-    print("create data complete")
 if __name__ == "__main__":
     main()

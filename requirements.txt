@@ -1,5 +1,7 @@
-langchain
-langchain-community
-langchain-ollama
-langchain-chroma
+langchain==0.3.7
+langchain-core==0.3.17
+langchain-community==0.3.7
+langchain-text-splitters==0.3.2
+chromadb
 pymupdf
+python-dotenv

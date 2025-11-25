@@ -81,3 +81,12 @@ pip install -r requirements.txt
   ```
   python app.py
   ```
+### 4.8 Kết quả đạt được
+- Câu hỏi 
+  ```
+  Dự thảo Kế hoạch phát triển Thương mại điện tử quốc gia giai đoạn 2026 –2030 là gì?
+  ```
+- Kết quả
+  ![Câu trả lời](images/result1.png)
+- So sánh
+  ![So sánh kết quả ở trang 22](images/reference1.png)
